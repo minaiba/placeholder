@@ -3,14 +3,8 @@ const urlParams = new URLSearchParams(window.location.search)
 
 const userId = urlParams.get('id')
 
-fetch('https://jsonplaceholder.typicode.com/todos')
+fetch(`https://jsonplaceholder.typicode.com/todos/${userid}`)
 
-.then(resuon => {
-    if (!resuon.ok) {
-        throw new Error('ошибка сети')
-    }
-    return resuon.json();
-})
 
 .then(tod => {
     tod.forEach(user => {
