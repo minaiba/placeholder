@@ -5,6 +5,13 @@ const userId = urlParams.get('id')
 
 fetch('https://jsonplaceholder.typicode.com/todos')
 
+.then(resuon => {
+    if (!resuon.ok) {
+        throw new Error('ошибка сети')
+    }
+    return resuon.json();
+})
+
 .then(tod => {
     tod.forEach(user => {
     const userDiv = document.createElement('div');
